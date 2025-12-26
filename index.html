@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Infinity Taekwondo | Student Registration</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Infinity Taekwondo student registration form. Secure online registration powered by Google Apps Script.">
+    <meta name="keywords" content="Infinity Taekwondo, TKD Registration, Taekwondo Student Form, Martial Arts Registration">
+    <meta name="author" content="Infinity Taekwondo">
+
+    <!-- Open Graph (Facebook, WhatsApp, etc.) -->
+    <meta property="og:title" content="Infinity Taekwondo | Student Registration">
+    <meta property="og:description" content="Register online for Infinity Taekwondo using our secure student registration form.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-github-username.github.io/your-repo-name/">
+    <!-- Optional -->
+    <!-- <meta property="og:image" content="https://your-site.com/preview.png"> -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Infinity Taekwondo | Student Registration">
+    <meta name="twitter:description" content="Infinity Taekwondo online student registration form.">
+
+    <!-- Security & Embedding -->
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      overflow: hidden;
+      color: #111827;
+    }
+
+    /* ---------- SPLASH ---------- */
+    .splash {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      z-index: 10;
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .splash.hide {
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+    }
+
+    .splash-content {
+      text-align: center;
+      max-width: 720px;
+      padding: 2rem;
+      animation: softAppear 1.2s ease forwards;
+    }
+
+    /* ---------- TEXT ---------- */
+    .title {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      position: relative;
+      display: inline-block;
+    }
+
+    .title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #111827, transparent);
+      animation: inkLine 1.6s ease forwards;
+    }
+
+    .subtitle {
+      margin-top: 1.4rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #6b7280;
+      animation: fadeIn 1.4s ease forwards;
+    }
+
+    /* ---------- MARTIAL SHADOW ---------- */
+    
+
+    /* ---------- IFRAME ---------- */
+    main {
+      position: absolute;
+      inset: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      opacity: 0;
+      transform: scale(0.985);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    iframe.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ---------- ANIMATIONS ---------- */
+    @keyframes softAppear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes inkLine {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
+    @keyframes shadowMove {
+      0%   { transform: translateX(0); }
+      50%  { transform: translateX(6px); }
+      100% { transform: translateX(0); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Splash -->
+  <div class="splash" id="splash">
+    <div class="splash-content">
+      <div class="title">Welcome to Infinity Taekwondo</div>
+      <div class="subtitle">Registration Form</div>
+
+      <!-- Martial Art Shadow Motion -->
+
+    </div>
+  </div>
+
+  <!-- App -->
+  <main>
+    <!-- iframe loads immediately -->
+    <iframe
+      id="infinityTKDFrame"
+      src="https://script.google.com/macros/s/AKfycbw8s2EfGFmqdlUyDzfC2cl961HveRboZlIGJx8oqxKeEeJ8hduRIo4V5AtYVVI880Rk/exec"
+      sandbox="allow-scripts allow-top-navigation allow-forms allow-same-origin allow-popups"
+      title="Infinity Taekwondo Registration">
+    </iframe>
+  </main>
+
+  <script>
+    window.addEventListener("load", () => {
+      const splash = document.getElementById("splash");
+      const iframe = document.getElementById("infinityTKDFrame");
+
+      setTimeout(() => {
+        splash.classList.add("hide");
+        iframe.classList.add("show");
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
